@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shorten long links in seconds." />
+    <title>Linkly — URL shortener</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+   <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <main class="page-shell">
+        <nav class="nav" aria-label="Primary navigation">
+            <a class="brand" href="/" aria-label="Linkly home"><span class="brand-mark">↗</span> linkly</a>
+            <span class="nav-note">Simple links. Better reach.</span>
+        </nav>
+
+        <section class="hero" aria-labelledby="page-title">
+            <div class="eyebrow"><span></span> Fast, free, and easy to share</div>
+            <h1 id="page-title">Make your links<br /><em>go further.</em></h1>
+            <p class="hero-copy">Turn long, messy URLs into clean links that are ready to share anywhere.</p>
+
+            <form id="shorten-form" class="shorten-form">
+                <label class="sr-only" for="url-input">Paste your long URL</label>
+                <input id="url-input" name="url" type="url" placeholder="Paste your long URL here..." autocomplete="url"
+                    required />
+                <button type="submit">Shorten link <span aria-hidden="true">↗</span></button>
+            </form>
+            <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="result-card" class="result-card" hidden aria-labelledby="result-title">
+            <div class="result-icon">✓</div>
+            <div class="result-content">
+                <p class="result-label" id="result-title">Your shortened link</p>
+                <a id="short-url" href="#" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <button id="copy-button" class="copy-button" type="button">Copy link</button>
+        </section>
+
+        <footer class="footer"><span>Built for the web</span><span class="footer-dot"></span><span>No sign-up
+                required</span></footer>
+    </main>
+    <script src="/app.js" defer></script>
+</body>
+
+</html>

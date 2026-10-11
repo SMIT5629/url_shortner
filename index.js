@@ -1,5 +1,6 @@
 require("dotenv").config()
 const express = require("express")
+const path = require("path")
 const {connectDB} = require("./db")
 const urlRoutes = require("./routes/url.route.js")
 const morgan = require("morgan")
@@ -10,10 +11,11 @@ connectDB();
 app.use(express.json())
 app.use(morgan("dev"))
 
-app.use("/api",urlRoutes)
+app.use(express.static(path.join(__dirname, "public")))
+app.use("/",urlRoutes)
 
 app.get("/",(req,res)=>{
-    res.send("your app is runing!")
+    res.sendFile(path.join(__dirname, "public", "index.html"))
 })
 
 
